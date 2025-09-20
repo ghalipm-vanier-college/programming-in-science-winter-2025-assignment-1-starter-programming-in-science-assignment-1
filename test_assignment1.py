@@ -23,9 +23,12 @@ def test_check_number_sign():
 
 # Function 4: Test case for star_triangle_pattern() function
 def test_star_triangle_pattern():
-    expected = "*\n**\n***\n"
-    assert star_triangle_pattern(3) == expected
-    assert star_triangle_pattern(1) == "*\n"
+    expected3 = "*\n**\n***\n"
+    expected4 = "*\n**\n***\\n****\n"
+    expected5 = "*\n**\n***\\n****\n*****n"
+    assert star_triangle_pattern(3) == expected3
+    assert star_triangle_pattern(4) == expected4
+    assert star_triangle_pattern(5) == expected5
 
 # Function 5: Test case for right_leaned_hollow_parallelogram() function
 def test_right_leaned_hollow_parallelogram():
@@ -41,8 +44,17 @@ def test_right_leaned_hollow_parallelogram():
         " *   *\n"
         "*****\n"
     )
+    expected6 = (
+        "     ******\n"
+        "    *    *\n"
+        "   *    *\n"
+        "  *    *\n"
+        " *    *\n"
+        "******\n"
+    )
     assert right_leaned_hollow_parallelogram(5) == expected5
     assert right_leaned_hollow_parallelogram(3) == expected3
+    assert right_leaned_hollow_parallelogram(6) == expected6
 
 
 # Function 6: Test case for sum_of_even_numbers() function
