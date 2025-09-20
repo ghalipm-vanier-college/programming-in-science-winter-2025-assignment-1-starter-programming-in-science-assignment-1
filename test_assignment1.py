@@ -3,48 +3,55 @@
 import unittest
 from Assignment1 import *
 
-# Test case for max_of_three() function
+# Function 1: Test case for max_of_three() function
 def test_max_of_three():
     assert max_of_three(3, 5, 2) == 5
     assert max_of_three(-1, -2, -3) == -1
     assert max_of_three(0, 0, 0) == 0
 
-# Test case for min_of_three() function
+# Function 2: Test case for min_of_three() function
 def test_min_of_three():
     assert min_of_three(3, 5, 2) == 2
     assert min_of_three(-1, -2, -3) == -3
     assert min_of_three(0, 0, 0) == 0
 
-# Test case for check_number_sign() function
+# Function 3: Test case for check_number_sign() function
 def test_check_number_sign():
     assert check_number_sign(5) == "Positive"
     assert check_number_sign(-10) == "Negative"
     assert check_number_sign(0) == "Zero"
 
-# Test case for star_triangle_pattern() function
+# Function 4: Test case for star_triangle_pattern() function
 def test_star_triangle_pattern():
     expected = "*\n**\n***\n"
     assert star_triangle_pattern(3) == expected
     assert star_triangle_pattern(1) == "*\n"
 
-# Test case for right_leaned_hollow_parallelogram() function
+# Function 5: Test case for right_leaned_hollow_parallelogram() function
 def test_right_leaned_hollow_parallelogram():
-    expected = (
+        expected3 = (
+        "    ***\n"
+        "   * *\n"
+        "  ***\n"
+    )
+    expected5 = (
         "    *****\n"
         "   *   *\n"
         "  *   *\n"
         " *   *\n"
         "*****\n"
     )
-    assert right_leaned_hollow_parallelogram(5) == expected
+    assert right_leaned_hollow_parallelogram(5) == expected5
+    assert right_leaned_hollow_parallelogram(3) == expected3
 
-# Test case for sum_of_even_numbers() function
+
+# Function 6: Test case for sum_of_even_numbers() function
 def test_sum_of_even_numbers():
     assert sum_of_even_numbers(10) == 30
     assert sum_of_even_numbers(1) == 0
     assert sum_of_even_numbers(2) == 2
 
-# Test case for list_multiples_of_5() function
+# Function 7: Test case for list_multiples_of_5() function
 def test_list_multiples_of_5():
     result = list_multiples_of_5()
     assert 5 in result and 50 in result
@@ -52,7 +59,7 @@ def test_list_multiples_of_5():
     assert min(result) == 5
     assert max(result) == 50
 
-# Test case for ask_until_valid_range()
+# Function 8: Test case for ask_until_valid_range()
 # Since this requires user input, typical unit tests might mock input, but here we only indicate its presence.
 def test_ask_until_valid_range():
     # This function requires manual or mock input for proper testing.
@@ -61,19 +68,23 @@ def test_ask_until_valid_range():
     assert isinstance(val, int)
     assert 1 <= val <= 7
 
-# Test case for ph_state_check() function
+# Function 9: Test case for ph_state_check() function
 def test_ph_state_check():
     assert ph_state_check(6) == "Acidic"
     assert ph_state_check(7) == "Neutral"
     assert ph_state_check(8) == "Basic"
 
-# Test case for rock_paper_scissors() function
+# Function 10: Test case for rock_paper_scissors() function
 def test_rock_paper_scissors():
+    assert rock_paper_scissors(1, 1) == "Tie!"
+    assert rock_paper_scissors(2, 2) == "Tie!"
+    assert rock_paper_scissors(3, 3) == "Tie!"
     assert rock_paper_scissors(1, 3) == "Player win!"
     assert rock_paper_scissors(2, 1) == "Player win!"
     assert rock_paper_scissors(3, 2) == "Player win!"
-    assert rock_paper_scissors(1, 1) == "Tie!"
+    assert rock_paper_scissors(1, 2) == "Player lose!"
     assert rock_paper_scissors(2, 3) == "Player lose!"
+    assert rock_paper_scissors(3, 1) == "Player lose!"
 
 if __name__ == '__main__':
     unittest.main()
